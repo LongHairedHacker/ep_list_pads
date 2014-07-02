@@ -1,6 +1,6 @@
 ep_list_pads fork 
 =================
-* of the Fachschaft Informatik at the university Kaiserslautern *
+*of the Fachschaft Informatik at the university Kaiserslautern*
 
 
 This fork only exists to implement small changes required by the Fachschaft Informatik.
