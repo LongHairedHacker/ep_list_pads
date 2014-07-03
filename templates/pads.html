@@ -1,9 +1,9 @@
 <html>
   <head>
-    <title>Pad Find</title>
+    <title><%=settings.title %> - Pad Find - <%= letter %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" href="../static/css/admin.css">
-    
+
     <% e.begin_block("scripts"); %>
     <script src="../static/js/jquery.js"></script>
     <script src="../socket.io/socket.io.js"></script>
@@ -43,17 +43,85 @@
       }());
     </script>
     <% e.end_block(); %>
+
+	<style>
+		body {
+        	margin: 0;
+            color: #333;
+            font: 14px helvetica, sans-serif;
+            background: #ddd;
+            background: -webkit-radial-gradient(circle,#aaa,#eee 60%) center fixed;
+            background: -moz-radial-gradient(circle,#aaa,#eee 60%) center fixed;
+            background: -ms-radial-gradient(circle,#aaa,#eee 60%) center fixed;
+            background: -o-radial-gradient(circle,#aaa,#eee 60%) center fixed;
+            border-top: 8px solid #470074;
+        }
+
+		#banner {
+			font-weight: bold;
+			font-size: 25px;
+
+			border-left: 2px solid #470074;
+			border-bottom: 2px solid #470074;
+			margin-left: 10px;
+			margin-right: 10px;
+			padding: 5px;
+
+			background-color: #ffffff;
+		}
+
+		#box {
+			
+			margin-left: 10px;
+			margin-right: 10px;
+
+			padding: 5px;
+			background-color: #ffffff;
+			border-left: 2px solid #470074;
+		}
+	</style>
   </head>
   <body>
-    <div id="wrapper">
+		<div id="banner">
+			<%=settings.title%>
+		</div>
+		<div id="box">
+       		<h1>Pads beginning with the letter <%= letter %></h1>
+			<b>Pad-Liste: </b>
+			<a href="/">Index</a> -
+			<a href="/list/a">A</a> - 
+			<a href="/list/b">B</a> - 
+			<a href="/list/c">C</a> - 
+			<a href="/list/d">D</a> - 
+			<a href="/list/e">E</a> - 
+			<a href="/list/f">F</a> - 
+			<a href="/list/g">G</a> - 
+			<a href="/list/h">H</a> - 
+			<a href="/list/i">I</a> - 
+			<a href="/list/j">J</a> - 
+			<a href="/list/k">K</a> - 
+			<a href="/list/l">L</a> - 
+			<a href="/list/m">M</a> - 
+			<a href="/list/n">N</a> - 
+			<a href="/list/o">O</a> - 
+			<a href="/list/p">P</a> - 
+			<a href="/list/q">Q</a> - 
+			<a href="/list/r">R</a> - 
+			<a href="/list/s">S</a> - 
+			<a href="/list/t">T</a> - 
+			<a href="/list/u">U</a> - 
+			<a href="/list/v">V</a> - 
+			<a href="/list/w">W</a> - 
+			<a href="/list/x">X</a> - 
+			<a href="/list/y">Y</a> - 
+			<a href="/list/z">Z</a><br/>
 
-       <h1>Pads beginning with the letter <%= letter %></h1>
-
-       <% pads.forEach(function (pad) { %>
-          <div class="pad"><a href="/public/<%= pad.toString() %>"><%= pad.toString() %></a></div>
-       <% }) %>
-
-    </div>
+			<ul>
+       		<% pads.forEach(function (pad) { %>
+          		<li><a href="/public/<%= pad.toString() %>"><%= pad.toString() %></a></li>
+			<% }) %>
+			</ul>
+	   </div>
   </body>
   
 </html>
