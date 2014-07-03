@@ -2,7 +2,8 @@
  padManager = require('ep_etherpad-lite/node/db/PadManager'),
         ERR = require("ep_etherpad-lite/node_modules/async-stacktrace"),
       async = require('ep_etherpad-lite/node_modules/async'),
-    express = require('ep_etherpad-lite/node_modules/express');
+    express = require('ep_etherpad-lite/node_modules/express'),
+	settings = require('ep_etherpad-lite/node/utils/Settings');
 
 exports.eejsBlock_indexWrapper = function (hook_name, args, cb) {
   args.content = args.content + eejs.require("ep_list_pads/templates/letters.ejs");
@@ -31,6 +32,7 @@ exports.registerRoute = function (hook_name, args, cb) {
       function(callback){
         var render_args = {
           errors: [],
+		  settings: settings,
           pads: data,
           letter: letter
         };
