@@ -17,7 +17,7 @@
   },
   "repository" : {
    "type" : "git",
-   "url"  : "https://github.com/JohnMcLear/ep_list_pads.git"
+   "url"  : "https://github.com/fsinfo/ep_list_pads.git"
   },
   "readmeFilename": "README.md",
   "_id": "ep_list_pads@0.0.1",
